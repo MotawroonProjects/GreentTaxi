@@ -1,6 +1,7 @@
 package com.app.greenttaxi.ui.activity_login;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,6 +22,7 @@ import com.app.greenttaxi.models.LoginModel;
 import com.app.greenttaxi.models.UserModel;
 import com.app.greenttaxi.mvp.activity_login_presenter.ActivityLoginPresenter;
 import com.app.greenttaxi.mvp.activity_login_presenter.ActivityLoginView;
+import com.app.greenttaxi.share.Common;
 import com.app.location_service.LocationService;
 import com.app.preferences.Preferences;
 
@@ -28,6 +30,7 @@ import com.app.preferences.Preferences;
 import io.paperdb.Paper;
 
 public class LoginActivity extends AppCompatActivity implements ActivityLoginView {
+    public static ProgressDialog dialog;
     private ActivityLoginBinding binding;
     private LoginModel model;
     private ActivityLoginPresenter presenter;
@@ -37,6 +40,21 @@ public class LoginActivity extends AppCompatActivity implements ActivityLoginVie
     private final int READ_REQ = 1;
     private final String gps_perm = Manifest.permission.ACCESS_FINE_LOCATION;
     private final int gps_req = 22;
+
+    public  void showprogress() {
+         dialog = Common.createProgressDialog(this, this.getString(R.string.wait));
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+       // dialog.show();        //dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+       // dialog.setMessage("Bitte warten, verbinde mit KNX-Board");
+        //dialog.setIndeterminate(true);
+       // dialog.show();
+    }
+
+    public static void hideprogress() {
+        dialog.dismiss();
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         Paper.init(newBase);
@@ -48,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements ActivityLoginVie
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         getDataFromIntent();
         initView();
+        showprogress();
 
     }
     private void CheckPermission() {
