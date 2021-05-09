@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements ActivityLoginVie
     private final int gps_req = 22;
 
     public  void showprogress() {
-         dialog = Common.createProgressDialog(this, this.getString(R.string.wait));
+         dialog = Common.createProgressDialog(this, this.getString(R.string.update_location));
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
        // dialog.show();        //dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);

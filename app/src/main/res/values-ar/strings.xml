@@ -6,4 +6,5 @@
     <string name="secrt_code" >الكود</string>
     <string name="wait" >"انتظر "</string>
     <string name="code_not_found" >الكود غير موجود</string>
+    <string name="update_location">تحديث الموقع</string>
 </resources>
