@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">جرين تاكسى</string>
+    <string name="field_req">الحقل مطلوب</string>
+    <string name="login" >تسجيل دخول</string>
+    <string name="secrt_code" >الكود</string>
+    <string name="wait" >"انتظر "</string>
+    <string name="code_not_found" >الكود غير موجود</string>
+</resources>

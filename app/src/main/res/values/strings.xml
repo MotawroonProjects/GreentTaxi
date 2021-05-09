@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" >GreentTaxi</string>
+    <string name="field_req" >Field Required</string>
+    <string name="login" >Login</string>
+    <string name="secrt_code" >Phone Code</string>
+    <string name="wait" >Wait</string>
+    <string name="code_not_found" >Code Not Found</string>
+</resources>
